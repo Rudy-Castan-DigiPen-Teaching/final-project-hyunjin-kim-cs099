@@ -74,12 +74,12 @@ For example, if a student had the login name fun.frank then the appropriate file
 - [ ] Published the project on GitHub.
 - [ ] The zip file contains a URL.txt that has the URL of your game.
 - [ ] Properly documented media files in a Media.md.
-- [ ] **All** Source Code has a proper header comment: Name, Project Name, Course Number, Term & Year. 
-- [ ] Properly named zip file.
+- [x] **All** Source Code has a proper header comment: Name, Project Name, Course Number, Term & Year. 
+- [x] Properly named zip file.
 - [ ] Game Design Document
 - [ ] [**core**] Programming Concepts document
-- [ ] [**core**] Implemented your own game using `p5.js`
-- [ ] All requirements that are completed are checked off here by replacing the `[ ]` with `[x]`
+- [x] [**core**] Implemented your own game using `p5.js`
+- [x] All requirements that are completed are checked off here by replacing the `[ ]` with `[x]`
 
 
 Scores for Assignments will be given as the following:

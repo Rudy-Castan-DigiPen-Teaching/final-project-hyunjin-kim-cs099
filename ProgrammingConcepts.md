@@ -1,3 +1,5 @@
+--let player = Googly;--
+
 **1. Shapes**  
 I used Shapes for Googly, Black thing which rise upside, every platforms.  
   
@@ -93,7 +95,48 @@ Code for variables:
   }
 ```
 
-**4. Conditional Statements**
+**4. Conditional Statements**  
+Most events required conditional statements.  
+I used it for changing scenes, controlling Googly, selecting buttons, etc.  
+  
+Code for controlling Googly:
+```
+function keyPressed() {
+
+  if ((InScenes.nowScene == 'gameStart' || InScenes.nowScene == 'tutorial') && googly.canMove == true) {
+    if ((googly.state == 'ground' || googly.JumpCount > 0) && keyCode == 32) {
+      Sound.jump.play();
+      googly.JumpCount -= 1;
+      googly.state = 'air';
+      var aa = createVector(0, -5);
+      player.getForce(aa);
+      //console.log('jump');
+    }
+
+    if (googly.IsStumping == false && keyCode == 32 && keyIsDown(83)) {
+      var stump = createVector(0, 15);
+      player.getForce(stump);
+      googly.IsStumping = true;
+      //console.log(0);
+    }
+
+    if (keyCode == 16) {
+      if (googly.dodged == false && googly.lookat == 'left') {
+        var Ldodge = createVector(-3.5, -0.5);
+        player.getForce(Ldodge);
+        player.vel.mult(0);
+        googly.dodged = true;
+      }
+      if (googly.dodged == false && googly.lookat == 'right') {
+        var Rdodge = createVector(3.5, -0.5);
+        player.getForce(Rdodge);
+        player.vel.mult(0);
+        googly.dodged = true;
+      }
+    }
+  }
+  }
+```
 
 **5. Loops**
 

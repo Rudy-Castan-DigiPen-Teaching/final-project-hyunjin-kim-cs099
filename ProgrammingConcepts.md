@@ -54,7 +54,44 @@ Code for use Color:
     pop();
 ```  
 
-**3. Variables**
+**3. Variables**  
+Usually used JSON variables, to classify each variables.
+
+Code for variables:
+```
+  let World = { // variables in playing Scene
+    highplat: 0,
+    stage: 0,
+    level: 1,
+    havePlayed: false,
+    dieTime: 50,
+    bgC: 0,
+  }
+  
+  let InScenes = { // variables related to Scenes
+    nowScene: 'mainMenu',
+    selected: 1,
+    selectBoxY: 495,
+    buttonY: 495,
+    mainAlpha: 0,
+    exitTime: 150,
+    seeVoid: 400,
+    over: 80,
+  }
+  
+  let googly = { // variables for consisting Googly
+    JumpCount: 2,
+    dodged: false,
+    IsStumping: false,
+    canMove: true,
+    state: 'air',
+    lookat: 'for',
+    eye: 'oo',
+    eyepos: 0,
+    stopped: 50,
+    color: 'skyblue',
+  }
+```
 
 **4. Conditional Statements**
 

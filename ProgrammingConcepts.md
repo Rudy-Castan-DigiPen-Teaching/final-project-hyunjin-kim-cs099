@@ -19,6 +19,7 @@ Code for making platform design:
 
     //rect(this.x, this.y, this.w, this.h - 15);
     pop(); ```  
+    
 **2. Colors**
 
 **3. Variables**

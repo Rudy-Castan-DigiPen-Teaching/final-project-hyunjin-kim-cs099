@@ -1,4 +1,4 @@
----let player = Googly;---
+__let player = Googly;__ 
 
 **1. Shapes**  
 I used Shapes for Googly, Black thing which rise upside, every platforms.  

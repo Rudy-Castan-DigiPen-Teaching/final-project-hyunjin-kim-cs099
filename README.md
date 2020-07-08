@@ -76,8 +76,8 @@ For example, if a student had the login name fun.frank then the appropriate file
 - [ ] Properly documented media files in a Media.md.
 - [x] **All** Source Code has a proper header comment: Name, Project Name, Course Number, Term & Year. 
 - [x] Properly named zip file.
-- [ ] Game Design Document
-- [ ] [**core**] Programming Concepts document
+- [x] Game Design Document
+- [x] [**core**] Programming Concepts document
 - [x] [**core**] Implemented your own game using `p5.js`
 - [x] All requirements that are completed are checked off here by replacing the `[ ]` with `[x]`
 

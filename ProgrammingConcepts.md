@@ -2,7 +2,8 @@
 I used Shapes for Googly, Black thing which rise upside, every platforms.  
   
 Code for making platform design:  
-``` push();
+``` 
+    push();
     noStroke();
     fill('#4e9c3b');
     rect(this.x, this.y, this.w, 13.75, 5, 5, 0, 0);
@@ -19,7 +20,7 @@ Code for making platform design:
 
     //rect(this.x, this.y, this.w, this.h - 15);
     pop();  
-    ```  
+```
     
 **2. Colors**
 

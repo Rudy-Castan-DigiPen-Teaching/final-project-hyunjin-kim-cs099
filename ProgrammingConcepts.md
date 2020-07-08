@@ -18,7 +18,8 @@ Code for making platform design:
     endShape(CLOSE);
 
     //rect(this.x, this.y, this.w, this.h - 15);
-    pop(); ```  
+    pop();  
+    ```  
     
 **2. Colors**
 

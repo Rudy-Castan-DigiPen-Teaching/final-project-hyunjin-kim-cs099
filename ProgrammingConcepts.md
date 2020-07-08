@@ -1,4 +1,7 @@
-__let player = Googly;__ 
+```
+// let player = Googly;
+```
+
 
 **1. Shapes**  
 I used Shapes for Googly, Black thing which rise upside, every platforms.  
@@ -105,7 +108,29 @@ function keyPressed() {
 ```
 
 **5. Loops**  
+I used `for loop` a lot by making dark thing, setting platforms' position, making Googly's flutter body, etc.
+  
+Code for setting platforms' position:
+```
+  platforms.push(new Box(-width * 3, height - 30, width * 6, 600));
 
+  for (let i = -1; i < NofPlatforms; i++) {
+    platform = new Box(random(-width, width), random(-2000 - (World.level * 800), height - 100), floor(random(2, 5)) * 60, 25);
+    var overlapping = false;
+    for (let j = 0; j < platforms.length; j++) {
+      var other = platforms[j];
+      let xcheck = abs(platform.x - other.x) < platform.w;
+      let ycheck = abs(platform.y - other.y) < 100;
+      if (xcheck && ycheck) {
+        overlapping = true;
+        break;
+      }
+    }
+    if (!overlapping) {
+      platforms.push(platform);
+    }
+  }
+```
 
 **6. Functions**
 

@@ -1,8 +1,9 @@
 ```
 // let player = Googly;
 ```
-
-
+  
+  
+    
 **1. Shapes**  
 I used Shapes for Googly, Black thing which rise upside, every platforms.  
   

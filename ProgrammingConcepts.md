@@ -1,6 +1,4 @@
-```
-// let player = Googly;
-```
+`// let player = Googly;`  
   
   
     
@@ -134,7 +132,109 @@ Code for setting platforms' position:
 ```
 
 **6. Functions**
+I used functions for create/clear maps, checking goal's y position, initializing Scenes or game.  
 
-**7. Classes**
+Code for initialize game:
+```
+function clearMap() {
+  platforms.splice(0, platforms.length);
+  highestBox.splice(0, highestBox.length);
+}
 
-**8. Arrays**
+function checkHighest() {
+  for (let i = 0; i < platforms.length; i++) {
+    highestBox.push(abs(platforms[i].y));
+  }
+  World.highplat = max(highestBox);
+}
+
+function initializePlayerpos() {
+  player.pos.x = 0;
+  player.pos.y = height - 100;
+  googly.stopped = 50;
+  googly.canMove = true;
+  InScenes.seeVoid = 400;
+  holy.y = 1500;
+}
+
+function initializeGame() {
+  clearMap();
+  createMap();
+  checkHighest();
+  initializePlayerpos();
+}
+```
+
+**7. Classes**  
+I use class for objects which makes events itself/with certain objects.
+
+Cod for making Black thing:
+```
+class Holy {
+  constructor(y) {
+    this.x = Camera.x;
+    this.y = y;
+    this.w = width;
+    this.h = 3000;
+  }
+
+  update() {
+    World.dieTime = constrain(World.dieTime, -10, 30);
+    this.y -= 1 + (((World.level - 1) * 0.1));
+    this.x = Camera.x;
+
+    if (player.pos.y > this.y + 70) {
+      World.dieTime -= 1;
+    } else {
+      World.dieTime = 50;
+    }
+
+    if (World.dieTime < 0) {
+      InScenes.nowScene = 'gameOver';
+    }
+    if (World.dieTime == 0) {
+      Music.end.play();
+      Music.end.setLoop(true);
+        }
+  }
+
+  show() {
+    for (let i = 0; i < 50; i++) {
+    push();
+    noStroke();
+    fill(42, 28, 43, i * 5);
+    rect(this.x - this.w * 1.5, this.y + (i * 7), this.w*4, 1000);
+    pop();
+    }
+  }
+}
+```
+
+**8. Arrays**  
+Arrays are best way to stack certain values.  
+I used it for saving object's positions.  
+
+Code for saving Googly's position and use into roll effect:
+```
+  let googlypos = [];
+
+    if (googly.dodged == true) {
+      googlypos.push([this.pos.x, this.pos.y]);
+    }
+    if (googly.dodged == false || googly.IsStumping == true) {
+      googlypos.splice(0, googlypos.length);
+    }
+
+    if (googly.dodged == true) {
+      push();
+      noStroke();
+      fill(255, 0, 0, 70);
+      for (let i = googlypos.length; i > 0; i--) {
+        this.dashVisual = googlypos.length - i;
+        this.dashVisual = constrain(this.dashVisual, 0, 15);
+        circle(googlypos[googlypos.length - i][0], googlypos[googlypos.length - i][1], this.dashVisual);
+      }
+      pop();
+    }
+```
+
